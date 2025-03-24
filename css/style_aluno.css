@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+body {
+    height: 100vh;
+}
+
+/*menu superior*/
+/*Configurações gerais*/
+nav.menu-superior {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 59px;
+    width: 100%;
+    height: 40px;
+    background-color: #24A1FF;
+    box-shadow: 0 2px 2px #8a8a8a;
+}
+
+.menu-superior li {
+    display: inline-block;   
+    list-style-type: none;
+    transition: .2s;
+    flex-wrap: wrap;
+    cursor: pointer;
+    display: flex; /* Flexbox dentro de cada <li> */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Alinha horizontalmente */
+    padding: 0% 5px;
+}
+
+.menu-superior ul.professores li:hover,
+.menu-superior ul.avaliacao-aluno li:hover,
+.menu-superior ul.Sair li:hover {
+    background-color: #ff7417;
+}
+
+.menu-superior a{
+    color:#fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 100%;
+}
+
+/*Configurações específicas*/
+.professores {
+    display: flex;
+    padding: 0;
+    margin-right: 1%;
+    width: 47%;
+    height: 45px;
+    overflow: hidden; /* oculta o exesso de texto que ultrapassa o tamanho da ul */
+}
+
+.avaliacao-aluno {
+    display: inline-block;
+    width: 100px;
+    height: 45px;
+    margin-left: 1%;
+}
+
+.Sair {
+    display: inline-block;
+    width: 70px;
+    height: 45px;
+}
+
+.avaliacao-aluno li, .Sair li{
+    overflow: hidden;
+    justify-content: center;
+    height: 45px;
+    padding: 0% 5px 0px 5px;
+}
+
+/*Barra de pesquisa*/
+.search-bar {
+    width: 26%;
+    margin-right: 1%;
+}
+.search-bar li {
+    width: 100%;
+}
+.search-bar form {
+    display: flex; /* Flexbox para a barra de busca e botão ficarem na mesma linha */
+    align-items: center;
+    width: 100%;
+}
+
+.search-bar input {
+    padding: 0% 2%;
+    font-size: 90%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Largura do campo de busca */
+    margin-right: 1%;
+}
+
+.search-bar input:focus {
+    border-color: #ff7417;
+    outline: none;
+}
+
+.search-bar button {
+    background-color: #007bff; /* Cor do botão */
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    color: #f19b62;
+}
+
+/*menu lateral*/
+nav.menu-lateral {
+    background-color: #24A1FF;
+    width: 56px;
+    height: 100%;
+    padding: 0 0 20px 8px;
+    box-shadow: 3px 0 0 #ff7417;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .2s;
+}
+
+nav.menu-lateral:hover {
+    width: 190px;
+}
+
+/*icone lista 3 linhas*/
+.btn-expandir i {
+    font-size: 2em;
+    position: fixed;
+    top: 4px;
+    left: 13px;
+    color: #fff;
+}
+
+/*Profile*/
+.perfil {
+    padding: 60px 0px 0 0px;
+    list-style-type: none;
+}
+
+.perfil a {
+    cursor: default; /* Tiro o cursor ponteiro padrão de textos-link*/
+}
+
+.perfil li {
+    border-bottom: 2px solid #ccc; /* Define a borda inferior */
+    padding: 0px;
+}
+
+.perfil i {
+    color: white;
+    font-size: 1.2em;
+    margin-right: 15px;
+}
+
+.texto-perfil {
+    display: flex;
+    flex-direction: column; /* Empilha os textos (Aluno e Semestre) */
+    line-height: 1.2; /* Ajusta o espaçamento entre as linhas */
+    font-size: 18px; /* Ajusta o tamanho da fonte */
+    white-space: nowrap;
+}
+
+.texto-perfil span:first-child {
+    font-weight: bold; /* Deixa "Aluno" em negrito */
+}
+
+.texto-perfil span:last-child {
+    font-size: 14px; /* Tamanho menor para "2º Semestre" */
+    opacity: 0.8; /* Deixa o texto um pouco mais claro (opcional) */
+}
+
+/*Semestres*/
+ul.semestres {
+    height: 100%;
+    list-style-type: none;
+    margin-top: 0px;
+}
+ul li.item-menu a, .perfil-menu a{
+    color:#fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 15px 10px 17px 10px;
+    display: flex;
+}
+
+ul li.item-menu a .txt-link {
+    margin-left: 20px;
+}
+
+ul li.item-menu {
+    transition: .2s;
+}
+
+.item-menu:hover {
+    background-color: #ff7417; /* Muda a cor quando o link é sobrevoado */
+}
+
+/*Trabalho do aluno*/
+#pdf-container {
+    width: 85vw;
+    background: #f8f8f8e5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid #ddd; 
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0 30% 0 5%;
+}
+
+.pdf-page {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+canvas {
+    display: block;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

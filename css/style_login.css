@@ -1,0 +1,169 @@
+/* Reset e configurações globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*PREPARAÇÃO DO BODY PARA ALINHAR O SEU CONTEÚDO VERTICALMENTE AO CENTRO*/
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ebebeb;
+    padding: 0 0 3%;
+}
+
+/*CABEÇALHO DA PÁGINA*/
+#cabeçalho{ /*Ajuste do container do cabeçalho*/
+    display: flex;
+    height: 90px;
+    width: 100%;
+    position: relative;
+}
+
+#Logo_FATEC{
+    height: 60px;
+    width: auto;
+    margin: 20px 5% 0 20px;
+}
+
+#Logo_CPS{
+    height: 100px;
+    width: auto;
+}
+
+#Logotipo_SIRUS{
+    height: 100px;
+    width: auto;
+    margin-left: auto;
+}
+
+
+/*ÁREA DE LOGIN*/
+#Logo_SIRUS{
+    height: 60px;
+    width: auto;
+    margin-bottom: 5%;
+}
+
+#login {
+    background-color: white;
+    margin-top: 60px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0px 2px #304ed2;
+    width: 95%;
+    max-width: 400px;
+}
+
+#titulo {
+    color: black;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#login p {
+    color: black;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.input_group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+label {
+    color: black;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.input_box {
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    padding: 8px;
+}
+
+.input_box:focus {
+    outline: none;
+    border-color: #304ed2;
+}
+
+#input_senha{
+    position: relative;}
+
+#visualizar_senha{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0 0.75rem;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#esqueci_senha {
+    color: black;
+    font-size: 12px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+#botao {
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+    background-color: #304ed2;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 2px #ccc;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-bottom: 5%;
+}
+
+#botao:active {
+    background-color: #263bbf;
+    transform: scale(0.98);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 480px) {
+    #cabeçalho {
+        flex-direction: column;
+        align-items: center;
+        height: 280px;
+    }
+
+    #Logotipo_SIRUS {
+        margin-left: 0;
+    }
+
+    #login {
+        padding: 15px;
+    }
+    
+    #titulo {
+        font-size: 24px;
+    }
+
+    #botao {
+        font-size: 14px;
+    }
+} 

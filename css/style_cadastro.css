@@ -1,0 +1,209 @@
+/* Reset e configurações globais */
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height: 100vh; /*Evita que o body fique menor que a tela*/
+    display: flex; /*Defino o body como flex para possibilitar o ajuste da disposição do conteúdo interno*/
+    flex-direction: column; /*Defino a direção do alinhmento*/
+    align-items: center;/*Alinho verticalmente ao centro os elementos do body*/
+    background-color: #ebebeb;
+    padding: 0 0 0 55px;
+}
+
+/* Esconder as setas no input de tipo number */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; /*Para navegadores Webkit, como o Chrome e Safari*/
+    margin: 0; /*Sem essa regra, alguns navegadores ainda podem reservar espaço invisível para os botões ocultos*/
+}
+
+/*=============================
+    ÁREA DE CADASTRO
+    Defino o design dos elementos da <div id="cadastro" </div>
+===============================*/
+#cadastro{ /*Contêiner pai*/
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    box-shadow: 2px 2px #ffac75;
+    margin: 45px 81px;
+    width: 95%;
+    max-width: 550px;
+}
+
+#Logo_SIRUS{ /*logotipo*/
+    height: 60px;
+    width: auto;
+    margin-bottom: 5%;
+}
+
+#selecionar_usuario{ /* Contêiner que contém os botões de seleção de tipo de usuário*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    height: 10%;
+    align-items: center;
+    margin-bottom: 10%;
+}
+
+.tipo_usuario{ /*Ajusta o design dos botões de tipo de usuário*/
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 0px 2px #ccc;
+    /*estilo antes do clique*/
+    color: #fc7a24;
+    border: 1px solid #fc7a24;
+    background-color: white;
+}
+
+.tipo_usuario:hover { /*Estilo ao passar o mouse pro cimar*/
+    background-color: #fc7a24;
+    color: white;
+    outline: none; /*Essa declaração evita que o navegador aplique borda de foco padrão*/
+}
+
+#cadastro .focus { /*Adiciono o estilo ao selecionar o botão pela classe .focus definida com javascript*/
+    background-color: #fc7a24;
+    color: white;
+}
+/*=============================
+    ESTILIZAÇÃO DO FORMULÁRIO
+===============================*/
+
+.campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Duas colunas: labels menores e inputs maiores */
+    gap: 10px; /* Espaçamento entre os elementos */
+    align-items: center;
+    max-width: 500px; /* Define um tamanho máximo para o formulário */
+}
+
+.campos .grupo_nome, .grupo_email{
+    grid-column: span 3; /* Faz o input ocupar duas colunas */
+    width: 100%; /* Garante que ele ocupe toda a largura disponível */
+}
+
+#grupo_curso{
+    grid-column: span 2; /* Faz o input ocupar duas colunas */
+    width: 100%; /* Garante que ele ocupe toda a largura disponível */
+}
+
+.campos .grupo_senhaal, .grupo_senhadoc{
+    grid-column: 1 / 3; /* Os campos de "senha" e "repetir senha" ocupam duas colunas */
+}
+
+.campos label {
+    font-weight: bold;
+    display: block;
+}
+
+.input_box {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.visualizar_senha {
+    grid-column: 1;
+    grid-row: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.visualizar_senha label {
+    font-weight: normal;
+    font-size: 14px;
+    display: inline;
+    margin-left: 5px;
+    white-space: nowrap;
+}
+
+#tipo_docente {
+    grid-column: 1;
+}
+
+#selecionar_docente {
+    display: flex;
+    flex-direction: row;
+    grid-column: span 2;
+    
+}
+
+.radio_item {
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+#visualizar_senhaal {
+    cursor: pointer;
+}
+
+.cadastrar_btn{
+    grid-column: 1 / -1;
+    grid-row: auto;
+    margin-top: 20px;
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fa6e11;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 2px #ccc;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-bottom: 5%;
+}
+
+.cadastrar_btn:active {
+    background-color: #ff6803;
+    transform: scale(0.98);
+}
+
+@media (max-width: 580px) {
+    .campos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px){
+    .campos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #grupo_curso {
+        grid-column: 1 / -1;
+    }
+
+    #selecionar_usuario{ /* Contêiner que contém os botões de seleção de tipo de usuário*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20%;
+    }
+
+    #selecionar_docente {
+        display: flex;
+        flex-direction: column;
+        grid-column: 1;
+    }
+
+    .visualizar_senha label {
+        font-size: 12px;
+        grid-column: 1/-1;
+    }
+
+}
