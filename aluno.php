@@ -10,7 +10,7 @@
     </head>
     <body>
 
-    <?php include 'funcoes/menu_aluno.php'; ?>
+    <?php include 'viewer/menu_aluno.php'; ?>
 
     <!--Trabalho do aluno-->
     <div id="pdf-container">

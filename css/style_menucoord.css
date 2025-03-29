@@ -1,7 +1,3 @@
-body {
-    height: 100vh;
-}
-
 /*menu superior*/
 /*Configurações gerais*/
 nav.menu-superior {
@@ -200,28 +196,4 @@ ul li.item-menu {
 
 .item-menu:hover {
     background-color: #ff7417; /* Muda a cor quando o link é sobrevoado */
-}
-
-/*Trabalho do aluno*/
-#pdf-container {
-    width: 85vw;
-    background: #f8f8f8e5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
-    border: 1px solid #ddd; 
-    padding: 20px;
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    margin: 0 30% 0 5%;
-}
-
-.pdf-page {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
-    padding: 0;
-    box-sizing: border-box;
 }

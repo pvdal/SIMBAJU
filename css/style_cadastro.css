@@ -1,9 +1,3 @@
-/* Reset e configurações globais */
-*{
-    padding: 0;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
 body{
     min-height: 100vh; /*Evita que o body fique menor que a tela*/
@@ -25,16 +19,28 @@ input[type="number"]::-webkit-inner-spin-button {
     ÁREA DE CADASTRO
     Defino o design dos elementos da <div id="cadastro" </div>
 ===============================*/
-#cadastro{ /*Contêiner pai*/
+#novo_cadastro{ /*Contêiner pai*/
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px;
+    padding: 50px;
     box-shadow: 2px 2px #ffac75;
     margin: 45px 81px;
     width: 95%;
-    max-width: 550px;
+    max-width: 650px;
+}
+
+.cancelar_cadastro {
+    background: none;
+    border: none;
+    margin-left: auto;
+}
+
+.cancelar_cadastro:hover {
+    cursor: pointer;
+    color: #fa6e11;
+    font-weight: bold;
 }
 
 #Logo_SIRUS{ /*logotipo*/
@@ -64,6 +70,7 @@ input[type="number"]::-webkit-inner-spin-button {
     color: #fc7a24;
     border: 1px solid #fc7a24;
     background-color: white;
+    white-space: nowrap;
 }
 
 .tipo_usuario:hover { /*Estilo ao passar o mouse pro cimar*/
@@ -72,46 +79,47 @@ input[type="number"]::-webkit-inner-spin-button {
     outline: none; /*Essa declaração evita que o navegador aplique borda de foco padrão*/
 }
 
-#cadastro .focus { /*Adiciono o estilo ao selecionar o botão pela classe .focus definida com javascript*/
+.focus { /*Adiciono o estilo ao selecionar o botão pela classe .focus definida com javascript*/
     background-color: #fc7a24;
     color: white;
 }
+
 /*=============================
     ESTILIZAÇÃO DO FORMULÁRIO
 ===============================*/
-
 .campos {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Duas colunas: labels menores e inputs maiores */
+    grid-template-columns: 1fr 1fr 1fr; /* Três colunas */
     gap: 10px; /* Espaçamento entre os elementos */
-    align-items: center;
-    max-width: 500px; /* Define um tamanho máximo para o formulário */
+    align-items: start; /* Elementos alinhados verticalmente a esquerda */
+    max-width: 600px; /* Define um tamanho máximo para o formulário */
 }
 
-.campos .grupo_nome, .grupo_email{
+.campos label {
+    font-weight: bold;
+    display: block; /* Garante que a label ocupe uma linha inteira, para que a input fique abaixo*/
+    margin-bottom: 5px; /* Pequena margem entre a label e a inputbox*/
+}
+
+.input_box { /* Todas as inputs possuem essa classe,com exceção das type="radio"*/
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.grupo_nome, .grupo_email{
     grid-column: span 3; /* Faz o input ocupar duas colunas */
     width: 100%; /* Garante que ele ocupe toda a largura disponível */
 }
 
 #grupo_curso{
     grid-column: span 2; /* Faz o input ocupar duas colunas */
-    width: 100%; /* Garante que ele ocupe toda a largura disponível */
-}
-
-.campos .grupo_senhaal, .grupo_senhadoc{
-    grid-column: 1 / 3; /* Os campos de "senha" e "repetir senha" ocupam duas colunas */
-}
-
-.campos label {
-    font-weight: bold;
-    display: block;
-}
-
-.input_box {
     width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+}
+
+.grupo_senhaal, .grupo_senhadoc{
+    grid-column: 1 / 3; /* Não uso span 2 aqui, porque dessa forma os elementos não seriam forçados a ir para a linha de baixo */
 }
 
 .visualizar_senha {
@@ -119,38 +127,41 @@ input[type="number"]::-webkit-inner-spin-button {
     grid-row: auto;
     display: flex;
     flex-direction: row;
+    margin-right: auto;
 }
 
 .visualizar_senha label {
     font-weight: normal;
     font-size: 14px;
-    display: inline;
+    display: flex;
     margin-left: 5px;
     white-space: nowrap;
+    margin-bottom: 0px !important; /* Retiro excepcionalmente a margem aqui, caso contrário fica desalinhado com a checkbox*/
 }
 
-#tipo_docente {
+#tipo_docente { /* Label da seleção de tipo de docente a ser cadastrado*/
     grid-column: 1;
 }
 
-#selecionar_docente {
+#selecionar_docente { /* Contêiner principal da seleção de tipo de docente a ser cadastrado*/
     display: flex;
     flex-direction: row;
     grid-column: span 2;
     
 }
 
-.radio_item {
+.radio_item { /* Contêiner que guarda cadas um, uma seleção input radio, que alterna entre o tipo de docente*/
     display: flex;
     flex-direction: row;
     margin-right: 10px;
     margin-left: 5px;
 }
 
-#visualizar_senhaal {
+#visualizar_senhaal, #visualizar_senhadoc{
     cursor: pointer;
 }
 
+/* Botão de cadastrar*/
 .cadastrar_btn{
     grid-column: 1 / -1;
     grid-row: auto;
@@ -173,13 +184,23 @@ input[type="number"]::-webkit-inner-spin-button {
     transform: scale(0.98);
 }
 
-@media (max-width: 580px) {
-    .campos {
-        grid-template-columns: 1fr 1fr;
+/*==================
+    RESPONSIVIDADE
+====================*/
+@media (min-width: 1380px) {
+    #selecionar_usuario {
+        width: 80%;
+        height: 15%;
     }
 }
 
-@media (max-width: 480px){
+@media (min-width: 481px) and (max-width: 1379px) {
+    #cadastro {
+        max-width: 550px;
+    }
+}   
+
+@media (max-width: 480px) {
     .campos {
         grid-template-columns: 1fr 1fr;
     }
@@ -205,5 +226,4 @@ input[type="number"]::-webkit-inner-spin-button {
         font-size: 12px;
         grid-column: 1/-1;
     }
-
 }
