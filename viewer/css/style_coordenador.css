@@ -10,6 +10,12 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
+body{
+    display: flex;
+    
+    max-height: 100vh;
+}
+
 #conteudo {
     display: flex;
     flex-direction: column;

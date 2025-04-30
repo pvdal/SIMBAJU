@@ -1,6 +1,7 @@
-<div id="cadastro"> <!--Contêiner principal, onde fica todos os elementos necessários para novo cadastro de usuário -->
+<div id="novo_cadastro"> <!--Contêiner principal, onde fica todos os elementos necessários para novo cadastro de usuário -->
+    <button class="cancelar_cadastro"><i class="bi bi-box-arrow-right"></i> Calcelar</button>
     <img id="Logo_SIRUS" src="imagens/Logo_SIRUS.png" alt="logo SIRUS"> <!--Logotipo-->
-    <h1>Cadastre um curso</h1>
+    <h1 class="titulo-novo-cadastro">Cadastre um curso</h1>
     <!--======================
         FORMULÁRIO DO CURSO
         ======================-->

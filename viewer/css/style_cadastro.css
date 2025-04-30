@@ -1,12 +1,4 @@
 
-body{
-    min-height: 100vh; /*Evita que o body fique menor que a tela*/
-    display: flex; /*Defino o body como flex para possibilitar o ajuste da disposição do conteúdo interno*/
-    flex-direction: column; /*Defino a direção do alinhmento*/
-    align-items: center;/*Alinho verticalmente ao centro os elementos do body*/
-    background-color: #ebebeb;
-    padding: 0 0 0 55px;
-}
 
 /* Esconder as setas no input de tipo number */
 input[type="number"]::-webkit-outer-spin-button,
@@ -29,6 +21,12 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 45px 81px;
     width: 95%;
     max-width: 650px;
+    max-height: 95vh;
+    overflow: auto;
+}
+
+.titulo-novo-cadastro {
+    color: #2e2e2e;
 }
 
 .cancelar_cadastro {

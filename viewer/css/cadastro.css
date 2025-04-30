@@ -1,4 +1,4 @@
-/* Reset e estilos gerais */
+/* Estilos gerais */
 body {
     background-color: #f5f5f5;
     color: #333;
@@ -9,6 +9,8 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
@@ -27,7 +29,7 @@ h1 {
 }
 
 .tab-button {
-    padding: 10px 20px; /*Ajusta o tamanho do*/
+    padding: 10px 20px; /*Ajusta o tamanho do botão de navegação entre tabelas*/
     background: none;
     border: none;
     cursor: pointer;
@@ -69,12 +71,7 @@ h1 {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-}
-
-@media (min-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr 1fr;
-    }
+    place-items: center;
 }
 
 /* Cards */
@@ -93,29 +90,18 @@ h1 {
 .card-header h2 {
     margin-bottom: 5px;
     color: #1e40af;
+    align-items: center;
 }
 
-.card-header p {
+/*É IMPORTANTE QUE O SUBTÍTULO FIQUE IDENTIFICADO AQUI COMO CLASSE E NÃO COMO 'P', ISSO INCLUENCIA NA TELA DE NOVO CADASTRO*/
+.sub-titulo {
     color: #666;
     font-size: 14px;
+    margin-bottom: 10px;
+    align-items: center;
 }
 
-/* Forms */
-form {
-    padding: 20px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 500;
-    color: #444;
-}
-
+/* Input-Boxes */
 input, select {
     width: 100%;
     padding: 10px;
@@ -128,24 +114,6 @@ input:focus, select:focus {
     outline: none;
     border-color: #2563eb;
     box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
-}
-
-.btn {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #1d4ed8;
 }
 
 /* Tables */
@@ -182,7 +150,7 @@ tbody tr:hover {
     color: #666;
 }
 
-/* Pagination */
+/* Paginação */
 .pagination {
     display: flex;
     justify-content: space-between;
@@ -238,21 +206,30 @@ tbody tr:hover {
 }
 
 
-/* Estilo do botão */
-#showOverlay {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
+/*******************
+    NOVO CADASTRO
+********************/
 
 /* Estilo do botão */
-#showOverlay {
+.showOverlay {
     padding: 10px 20px;
     font-size: 16px;
+    max-width: 150px;
+    max-height: 50px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-#overlay {
+.showOverlay:hover {
+    background-color: #1d4ed8;
+}
+
+/*Container da página de novo cadastro*/
+.overlay {
     position: fixed; /* Fixa na tela */
     top: 50%;
     left: 50%;
@@ -265,7 +242,8 @@ tbody tr:hover {
 }
 
 /* Estilo para escurecer o fundo */
-#overlayBackground {
+.overlayBackground {
+    display: none; /* Inicialmente escondido */
     position: fixed;
     top: 0;
     left: 0;

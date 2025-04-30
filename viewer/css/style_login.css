@@ -104,7 +104,8 @@ label {
 }
 
 #input_senha{
-    position: relative;}
+    position: relative;
+}
 
 #visualizar_senha{
     position: absolute;

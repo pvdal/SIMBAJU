@@ -1,0 +1,263 @@
+/********************
+    MENU SUPERIOR
+*********************/
+nav.menu-superior {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(0, 110, 255);
+    box-shadow: 0 2px 2px #8a8a8a;
+    padding: 0;
+}
+/*icone lista 3 linhas*/
+#btn-expandir {
+    position: relative;
+    top: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    height: 100%;
+    margin: 0 15px 0 15px;
+}
+#btn-expandir i {
+    font-size: 2em;
+    color: white;
+}
+
+/*Botões do menu*/
+#itens-menu-superior {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0 20px;
+    margin: 0;
+    gap: 12px;
+    flex: 1;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+#itens-menu-superior li {
+    display: flex;
+    align-items: center;
+}
+
+.iten-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: background-color 0.3s;
+}
+
+.iten-btn:hover {
+    background-color: #ff7417;
+}
+
+#search-bar {
+    flex-grow: 1;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Barra de busca */
+#search-bar form{
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+#search-bar input {
+    width: 100%;
+    padding: 8px 40px 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+#search-bar button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 6px;
+    padding: 0 0.75rem;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #2563eb;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#search-bar button:hover {
+    cursor: pointer;
+    background-color: #fafafa;
+    transform: scale(0.98);
+}
+/*
+Outro estilo de search-bar
+#search-bar form {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+#search-bar input {
+    flex: 1;
+    padding: 8px 40px 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    max-height: 30px;
+}
+
+#search-bar input:focus {
+    border-color: #ff7417;
+    outline: none;
+}
+
+#search-bar button {
+    background-color: rgb(115, 176, 255);
+    color: rgb(0, 110, 255);
+    border: none;
+    padding: 6px 8px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#search-bar button:hover {
+    background-color: #1d4ed8;
+}
+*/
+
+/*menu lateral*/
+main {
+    padding: 20px;
+    width: 100vw;
+}
+  
+  #side-bar {
+    background-color: rgb(0, 110, 255);
+    height: calc(100vh - 40px);
+    margin-top: 40px;
+    padding: 0;
+    margin-left: 0;
+  }
+  
+  #side-bar-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px;
+    height: 100%;
+  }
+  
+  #user {
+    display: flex;
+    align-items: center;
+    color: #dfdfdf;
+    border-top: 1px solid #ccc;
+    padding: 10px 0 0 0;
+    white-space: nowrap;
+  }
+  
+  #user-avatar {
+    width: 50px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  #user i {
+    display: flex;
+    justify-content: center;
+    font-size: 1.8rem;
+    
+  }
+  
+  #user-infos {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+  }
+  
+  #user-infos span:first-child {
+    font-weight: bold;
+  }
+  
+  #side-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+  }
+  
+  .side-item {
+    padding: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .side-item a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #dfdfdf;
+  }
+  
+  .side-item a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+  
+  .side-item.active {
+    background-color: white;
+    white-space: nowrap;
+  }
+  .side-item.active a {
+    color: #0a0a0a;
+  }
+  .side-item:hover:not(.active){
+    background-color: rgba(255, 255, 255, 0.61);
+  }
+  .side-item:hover:not(.active) a{
+    color: #0a0a0a;
+  }
+  
+  .item-description {
+    width: 0px;
+    overflow: hidden;
+  }
+
+/* Buttons */
+#novo-cadastro {
+    white-space: nowrap;
+    padding: 10px 15px;
+    font-size: 16px;
+    width: 250px;
+    max-height: 50px;
+    background-color: #ff7417;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#novo-cadastro:hover {
+    background-color: #fd6500;
+}

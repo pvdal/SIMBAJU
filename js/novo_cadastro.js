@@ -12,9 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const confirmar_senhadoc = document.getElementById('confirmar_senhadoc');
     const visualizar_senhadoc = document.getElementById('visualizar_senhadoc');
 
-    const cancelar_cadastro = document.querySelectorAll('.cancelar_cadastro');
-    const novo_cadastro = document.getElementById('overlay');
-    const fundo_cadastro = document.getElementById('overlayBackground');
+    
     /*
     Função para mostrar os campos do aluno e ocultar os do docente.
     Também altera o foco dos botões de tipo de usuário.
@@ -77,13 +75,49 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //JS do elemento sobreposto
+
+    document.querySelectorAll('.showOverlay').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const abaAtiva = btn.closest('.tab-content.active');
+    
+            // Verificar o valor de abaAtiva
+            console.log(abaAtiva);
+    
+            if (!abaAtiva) return;
+                
+            const overlay = abaAtiva.querySelector('.overlay');
+            const overlayBg = abaAtiva.querySelector('.overlayBackground');
+
+            console.log('Overlay:', overlay); // Verificando se encontrou o overlay
+            console.log('Overlay Background:', overlayBg); // Verificando se encontrou o overlayBackground
+    
+            if (overlay && overlayBg) {
+                overlay.style.display = 'flex';
+                overlayBg.style.display = 'block';
+            }
+
+            const cancelarBtn = abaAtiva.querySelector('.cancelar_cadastro');
+            if (cancelarBtn) {
+                cancelarBtn.addEventListener('click', () => {
+                    overlay.style.display = 'none';
+                    overlayBg.style.display = 'none';
+                });
+            }
+
+        });
+    });
+
+    /*
+    const cancelar_cadastro = document.querySelectorAll('.cancelar_cadastro');
+    const novo_cadastro = document.getElementById('overlay');
+    const fundo_cadastro = document.getElementById('overlayBackground');
     const showBtn = document.getElementById('showOverlay');
 
     showBtn.addEventListener('click', () => {
         novo_cadastro.style.display = 'flex';
         fundo_cadastro.style.display = 'block';
     });
-
+    
     //Fechar janela
     cancelar_cadastro.forEach(fecharJanela =>{
         fecharJanela.addEventListener("click", () =>{
@@ -91,5 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
             fundo_cadastro.style.display ="none";
         })
     });
+    */
 });
     
