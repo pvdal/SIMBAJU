@@ -9,7 +9,7 @@
     </head>
     <body>
 
-        <?php include 'viewer/menu_coordenador.php'; ?>
+        <?php include 'viewer/coordenador/menu_coordenador.php'; ?>
         <!--
         <div id="conteudo">
             <php include 'controller/controller.php'; ?>

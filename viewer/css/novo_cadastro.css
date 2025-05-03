@@ -1,5 +1,3 @@
-
-
 /* Esconder as setas no input de tipo number */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -23,6 +21,10 @@ input[type="number"]::-webkit-inner-spin-button {
     max-width: 650px;
     max-height: 95vh;
     overflow: auto;
+}
+
+#novo_cadastro::-webkit-scrollbar {
+    width: 0px;
 }
 
 .titulo-novo-cadastro {
@@ -52,41 +54,6 @@ input[type="number"]::-webkit-inner-spin-button {
     margin-bottom: 5%;
 }
 
-#selecionar_usuario{ /* Contêiner que contém os botões de seleção de tipo de usuário*/
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 90%;
-    height: 10%;
-    align-items: center;
-    margin-bottom: 10%;
-}
-
-.tipo_usuario{ /*Ajusta o design dos botões de tipo de usuário*/
-    width: 200px;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 3px;
-    box-shadow: 0px 2px #ccc;
-    /*estilo antes do clique*/
-    color: #fc7a24;
-    border: 1px solid #fc7a24;
-    background-color: white;
-    white-space: nowrap;
-}
-
-.tipo_usuario:hover { /*Estilo ao passar o mouse pro cimar*/
-    background-color: #fc7a24;
-    color: white;
-    outline: none; /*Essa declaração evita que o navegador aplique borda de foco padrão*/
-}
-
-.focus { /*Adiciono o estilo ao selecionar o botão pela classe .focus definida com javascript*/
-    background-color: #fc7a24;
-    color: white;
-}
-
 /*=============================
     ESTILIZAÇÃO DO FORMULÁRIO
 ===============================*/
@@ -109,6 +76,7 @@ input[type="number"]::-webkit-inner-spin-button {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    height: 30px;
 }
 
 .grupo_nome, .grupo_email{
@@ -121,7 +89,7 @@ input[type="number"]::-webkit-inner-spin-button {
     width: 100%;
 }
 
-.grupo_senhaal, .grupo_senhadoc{
+.grupo_senha{
     grid-column: 1 / 3; /* Não uso span 2 aqui, porque dessa forma os elementos não seriam forçados a ir para a linha de baixo */
 }
 
@@ -140,24 +108,6 @@ input[type="number"]::-webkit-inner-spin-button {
     margin-left: 5px;
     white-space: nowrap;
     margin-bottom: 0px !important; /* Retiro excepcionalmente a margem aqui, caso contrário fica desalinhado com a checkbox*/
-}
-
-#tipo_docente { /* Label da seleção de tipo de docente a ser cadastrado*/
-    grid-column: 1;
-}
-
-#selecionar_docente { /* Contêiner principal da seleção de tipo de docente a ser cadastrado*/
-    display: flex;
-    flex-direction: row;
-    grid-column: span 2;
-    
-}
-
-.radio_item { /* Contêiner que guarda cadas um, uma seleção input radio, que alterna entre o tipo de docente*/
-    display: flex;
-    flex-direction: row;
-    margin-right: 10px;
-    margin-left: 5px;
 }
 
 #visualizar_senhaal, #visualizar_senhadoc{
@@ -205,8 +155,9 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 @media (min-width: 481px) and (max-width: 1379px) {
-    #cadastro {
+    #novo_cadastro {
         max-width: 550px;
+        padding: 30px;
     }
 }   
 

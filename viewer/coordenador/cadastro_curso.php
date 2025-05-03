@@ -2,10 +2,11 @@
     <button class="cancelar_cadastro"><i class="bi bi-box-arrow-right"></i> Calcelar</button>
     <img id="Logo_SIRUS" src="imagens/Logo_SIRUS.png" alt="logo SIRUS"> <!--Logotipo-->
     <h1 class="titulo-novo-cadastro">Cadastre um curso</h1>
+    <p class="subtitulo-novo-cadastro">Informações cadastrais do curso</p>
     <!--======================
         FORMULÁRIO DO CURSO
         ======================-->
-    <form id="campos_curso" class="campos">
+    <form id="campos_curso" class="campos" >
         <!--Campos de input do curso-->
         <div class="input_group grupo_nome">
             <label for="nome_curso">Nome</label>
@@ -14,12 +15,12 @@
 
         <div class="input_group">
             <label for="turno_curso">Turno</label>
-            <input class="input_box" type="text" id="turno._curso" name="turno_curso" required>
+            <input class="input_box" type="text" id="turno_curso" name="turno_curso" required>
         </div>
 
         <div class="input_group">
             <label for="coordenador_curso">Coordenador</label>
-            <select name="coordenador_curso" id="coordenador_curso" none>
+            <select class="input_box" name="coordenador_curso" id="coordenador_curso" none>
                 <option value="" selected disabled>Selecione um coordenador</option>
                 <option value="1">Silvia</option>
                 <option value="2">Rodrigo</option>
@@ -52,7 +53,14 @@
             </select>
         </div>
 
+        <div class="input_group">
+            <label for="estado_docente">Estado</label>
+            <select class="input_box" name="estado_docente" required>
+                <option value="1">Ativo</option>
+                <option value="0">Inativo</option>
+            </select>
+        </div>
         <!--Botão de cadastrar curso-->
-        <button id="cadastrar_aluno" class="cadastrar_btn" type="submit">Cadastrar</button>
+        <button id="cadastrar_curso" class="cadastrar_btn" type="submit">Cadastrar</button>
     </form>
 </div>

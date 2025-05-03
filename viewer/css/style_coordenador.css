@@ -1,5 +1,5 @@
 @import "style_menucoord.css?v=<?php echo time(); ?>";
-@import "style_cadastro.css?v=<?php echo time(); ?>";
+@import "novo_cadastro.css?v=<?php echo time(); ?>";
 @import "cadastro.css?v=<?php echo time(); ?>";
 
 /* Reset e configurações globais */
@@ -12,7 +12,6 @@
 
 body{
     display: flex;
-    
     max-height: 100vh;
 }
 

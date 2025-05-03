@@ -1,10 +1,11 @@
 
 <div class="container">
-    <h1>Cadastro Acadêmico</h1>
+    <h1 class="titulo-cadastro">Cadastro Acadêmico</h1>
     
     <div class="tabs">
         <button class="tab-button active" data-tab="alunos">Alunos</button>
         <button class="tab-button" data-tab="docentes">Docentes</button>
+        <button class="tab-button" data-tab="coordenador">Coordenador</button>
         <button class="tab-button" data-tab="cursos">Cursos</button>
     </div>
     
@@ -19,7 +20,7 @@
                 <div class="overlayBackground"></div>
 
                 <div class="overlay">
-                    <?php include 'viewer/cadastro_usuario.php'; ?>
+                    <?php include 'viewer/coordenador/cadastro_aluno.php'; ?>
                 </div>
             </div>
             <div class="search-container">
@@ -62,6 +63,13 @@
                 <div class="card-header">
                     <h2>Docentes Cadastrados</h2>
                     <p>Lista de todos os docentes cadastrados no sistema.</p>
+                    <button class="showOverlay">Novo cadastro</button>
+
+                    <div class="overlayBackground"></div>
+
+                    <div class="overlay">
+                        <?php include 'viewer/coordenador/cadastro_docente.php'; ?>
+                    </div>          
                 </div>
             
                 <div class="search-container">
@@ -94,6 +102,53 @@
             </div>
         </div>
     </div>
+
+    <!-- Coordenadores Tab -->
+    <div class="tab-content" id="coordenador-tab">
+        <div class="grid-container">            
+            <div class="card">
+                <div class="card-header">
+                    <h2>Coordenadores Cadastrados</h2>
+                    <p>Lista de todos os coordenadores cadastrados no sistema.</p>
+                    <button class="showOverlay">Novo cadastro</button>
+
+                    <div class="overlayBackground"></div>
+
+                    <div class="overlay">
+                        <?php include 'viewer/coordenador/cadastro_coordenador.php'; ?>
+                    </div>
+                </div>
+            
+                <div class="search-container">
+                    <input type="text" id="busca-coordenador" placeholder="Buscar coordenador..." class="search-input">
+                    <button id="buscar-coordenador-btn" class="btn-search">Buscar</button>
+                </div>
+                <div class="table-container">
+                    <table id="coordenador-table">
+                        <thead>
+                            <tr>
+                                <th>CPF</th>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>Senha</th>
+                                <th>Estado</th>
+                                <th>Nível de acesso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dados serão inseridos via JavaScript -->
+                        </tbody>
+                    </table>
+                    <p id="coordenador-empty-message" class="empty-message">Nenhum coordenador cadastrado ainda.</p>
+                </div>
+                <div class="pagination">
+                    <button id="coordenador-prev-page" class="btn-outline" disabled>Anterior</button>
+                    <span id="coordenador-page-info">Página 1 de 1</span>
+                    <button id="coordenador-next-page" class="btn-outline" disabled>Próximo</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <!-- Cursos Tab -->
     <div class="tab-content" id="cursos-tab">
@@ -106,8 +161,8 @@
                     <div class="overlayBackground"></div>
 
                     <div class="overlay">
-                    <?php include 'viewer/cadastro_curso.php'; ?>
-                </div>
+                        <?php include 'viewer/coordenador/cadastro_curso.php'; ?>
+                    </div>
                 <div class="search-container">
                     <input type="text" id="busca-curso" placeholder="Buscar curso..." class="search-input">
                     <button id="buscar-curso-btn" class="btn-search">Buscar</button>
@@ -139,6 +194,6 @@
     </div>
 </div>
 
-<script src="js/cadastros.js?v=<?php echo time(); ?>"></script>
+<script src="viewer/js/cadastros.js?v=<?php echo time(); ?>"></script>
 
-<script src="js/novo_cadastro.js?v=<?php echo time(); ?>"></script>
+<script src="viewer/js/novo_cadastro.js?v=<?php echo time(); ?>"></script>

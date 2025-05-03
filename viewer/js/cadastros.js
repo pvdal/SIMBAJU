@@ -8,10 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const buscaAluno = document.getElementById('busca-aluno');
     const buscaDocente = document.getElementById('busca-docente');
     const buscaCurso = document.getElementById('busca-curso');
+    const buscaCoordenador = document.getElementById('busca-coordenador');
     const buscarAlunoBtn = document.getElementById('buscar-aluno-btn');
     const buscarDocenteBtn = document.getElementById('buscar-docente-btn');
     const buscarCursoBtn = document.getElementById('buscar-curso-btn');
-    
+    const buscarCoordenadorBtn = document.getElementById('buscar-coordenador-btn');
+
     // Paginação
     const alunosPrevPage = document.getElementById('alunos-prev-page');
     const alunosNextPage = document.getElementById('alunos-next-page');
@@ -19,12 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const docentesNextPage = document.getElementById('docentes-next-page');
     const cursosPrevPage = document.getElementById('cursos-prev-page');
     const cursosNextPage = document.getElementById('cursos-next-page');
+    const coordenadoresPrevPage = document.getElementById('coordenador-prev-page');
+    const coordenadoresNextPage = document.getElementById('coordenador-next-page');
     
     // Estado da paginação
     const paginationState = {
         alunos: { currentPage: 1 },
         docentes: { currentPage: 1 },
-        cursos: { currentPage: 1 }
+        cursos: { currentPage: 1 },
+        coordenador: { cuurentPage: 1}
     };
     
     // Event Listeners
@@ -45,6 +50,10 @@ document.addEventListener('DOMContentLoaded', function() {
     buscarDocenteBtn.addEventListener('click', () => {
         buscarRegistros('docentes', buscaDocente.value);
     });
+
+    buscarCoordenadorBtn.addEventListener('click', () => {
+        buscarRegistros('coordenadores', buscaCoordenador.value);
+    });
     
     buscarCursoBtn.addEventListener('click', () => {
         buscarRegistros('cursos', buscaCurso.value);
@@ -60,6 +69,12 @@ document.addEventListener('DOMContentLoaded', function() {
     buscaDocente.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             buscarRegistros('docentes', buscaDocente.value);
+        }
+    });
+
+    buscaCoordenador.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            buscarRegistros('coordenadores', buscaCoordenador.value);
         }
     });
     
@@ -86,6 +101,14 @@ document.addEventListener('DOMContentLoaded', function() {
         mudarPagina('docentes', 1);
     });
     
+    coordenadoresPrevPage.addEventListener('click', () => {
+        mudarPagina('coordenadores', -1);
+    });
+    
+    coordenadoresNextPage.addEventListener('click', () => {
+        mudarPagina('coordenadores', 1);
+    });
+
     cursosPrevPage.addEventListener('click', () => {
         mudarPagina('cursos', -1);
     });
@@ -201,24 +224,41 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (tipo === 'alunos') {
                 row.innerHTML = `
-                    <td>${item.nome}</td>
-                    <td>${item.matricula}</td>
-                    <td>${item.email}</td>
-                    <td>${item.curso}</td>
+                    <td>${item.RA}</td>
+                    <td>${item.NOME}</td>
+                    <td>${item.SEMESTRE}</td>
+                    <td>${item.EMAIL}</td>
+                    <td>${item.SENHA}</td>
+                    <td>${item.ESTADO}</td>
+                    <td>${item.NIVEL_ACESSO}</td>
+                    <td>${item.GRUPO}</td>
+                    <td>${item.CURSO}</td>
                 `;
             } else if (tipo === 'docentes') {
                 row.innerHTML = `
-                    <td>${item.nome}</td>
-                    <td>${item.id_funcional}</td>
-                    <td>${item.email}</td>
-                    <td>${item.departamento}</td>
+                    <td>${item.CPF}</td>
+                    <td>${item.NOME}</td>
+                    <td>${item.EMAIL}</td>
+                    <td>${item.SENHA}</td>
+                    <td>${item.ESTADO}</td>
+                    <td>${item.NIVEL_ACESSO}</td>
+                `;
+            } else if (tipo === 'coordenadores') {
+                row.innerHTML = `
+                    <td>${item.CPF}</td>
+                    <td>${item.NOME}</td>
+                    <td>${item.EMAIL}</td>
+                    <td>${item.SENHA}</td>
+                    <td>${item.ESTADO}</td>
+                    <td>${item.NIVEL_ACESSO}</td>
                 `;
             } else if (tipo === 'cursos') {
                 row.innerHTML = `
-                    <td>${item.nome}</td>
-                    <td>${item.codigo}</td>
-                    <td>${item.duracao}</td>
-                    <td>${item.departamento}</td>
+                    <td>${item.ID}</td>
+                    <td>${item.NOME}</td>
+                    <td>${item.TURNO}</td>
+                    <td>${item.ESTADO}</td>
+                    <td>${item.COORDENADOR}</td>
                 `;
             }
             
