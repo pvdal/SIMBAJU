@@ -9,10 +9,10 @@
             case 'cadastro_curso':
             include 'viewer/coordenador/cadastro_curso.php'; 
             break;
-            case 'cadastro';
+            case 'cadastro':
             include 'viewer/coordenador/cadastro.php'; 
             break;
-            case 'cadastro_aluno';
+            case 'cadastro_aluno':
             include 'viewer/coordenador/cadastro_aluno.php'; 
             break;
             default:

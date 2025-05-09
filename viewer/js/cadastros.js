@@ -1,5 +1,5 @@
 // Elementos DOM
-document.addEventListener('DOMContentLoaded', function() {
+function cadastroAcademico() {
     // Tabs
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
@@ -265,4 +265,4 @@ document.addEventListener('DOMContentLoaded', function() {
             tbody.appendChild(row);
         });
     }
-});
+}

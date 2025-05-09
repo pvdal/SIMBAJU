@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function novoCadastroAcademico() {
     // Constantes de visualizar senha
     /*
     const senha_aluno = document.getElementById('senha_aluno'); //Aluno
@@ -59,5 +59,5 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     });
-});
+}
     

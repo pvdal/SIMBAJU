@@ -16,6 +16,7 @@
         <div class="input_group">
             <label for="estado_coordenador">Estado</label>
             <select class="input_box" id="estado_coordenador" name="estado_coordenador" required>
+                <option value="" selected disabled></option>
                 <option value="1">Ativo</option>
                 <option value="0">Inativo</option>
             </select>

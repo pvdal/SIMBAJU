@@ -31,6 +31,7 @@
         <div class="input_group">
             <label for="semestre_aluno">Semestre</label>
             <select id="semestre_aluno" class="input_box" name="semestre_aluno" required>
+                <option value="" selected disabled></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -47,6 +48,7 @@
         <div class="input_group">
             <label for="estado_aluno">Estado</label>
             <select id="estado_aluno" class="input_box" name="estado_aluno" required>
+                <option value="" selected disabled></option>
                 <option value="1">Ativo</option>
                 <option value="0">Inativo</option>
             </select>

@@ -1,5 +1,5 @@
 
-<div class="container">
+<div id="cadastro-academico" class="container">
     <h1 class="titulo-cadastro">Cadastro Acadêmico</h1>
     
     <div class="tabs">
@@ -20,7 +20,7 @@
                 <div class="overlayBackground"></div>
 
                 <div class="overlay">
-                    <?php include 'viewer/coordenador/cadastro_aluno.php'; ?>
+                    <?php include 'cadastro_aluno.php'; ?>
                 </div>
             </div>
             <div class="search-container">
@@ -68,7 +68,7 @@
                     <div class="overlayBackground"></div>
 
                     <div class="overlay">
-                        <?php include 'viewer/coordenador/cadastro_docente.php'; ?>
+                        <?php include 'cadastro_docente.php'; ?>
                     </div>          
                 </div>
             
@@ -115,7 +115,7 @@
                     <div class="overlayBackground"></div>
 
                     <div class="overlay">
-                        <?php include 'viewer/coordenador/cadastro_coordenador.php'; ?>
+                        <?php include 'cadastro_coordenador.php'; ?>
                     </div>
                 </div>
             
@@ -161,7 +161,7 @@
                     <div class="overlayBackground"></div>
 
                     <div class="overlay">
-                        <?php include 'viewer/coordenador/cadastro_curso.php'; ?>
+                        <?php include 'cadastro_curso.php'; ?>
                     </div>
                 <div class="search-container">
                     <input type="text" id="busca-curso" placeholder="Buscar curso..." class="search-input">
@@ -192,8 +192,5 @@
             </div>
         </div>
     </div>
+    
 </div>
-
-<script src="viewer/js/cadastros.js?v=<?php echo time(); ?>"></script>
-
-<script src="viewer/js/novo_cadastro.js?v=<?php echo time(); ?>"></script>

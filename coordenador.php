@@ -12,8 +12,15 @@
         <?php include 'viewer/coordenador/menu_coordenador.php'; ?>
         <!--
         <div id="conteudo">
-            <php include 'controller/controller.php'; ?>
+            <php include 'controler/controller.php'; ?>
         </div>
         -->
     </body>
+    <script src="controller/controller.js?v=<?php echo time(); ?>"></script>
+    
+    <script src="viewer/js/menu_coord.js?v=<?php echo time(); ?>"></script>
+
+    <script src="viewer/js/cadastros.js?v=<?php echo time(); ?>"></script>
+    
+    <script src="viewer/js/novo_cadastro.js?v=<?php echo time(); ?>"></script>
 </html>
